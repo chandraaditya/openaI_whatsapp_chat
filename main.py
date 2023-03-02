@@ -13,6 +13,7 @@ your_name = "your exact whatsapp name"
 load_pages = 10
 org = "org-xxx"
 api_key = "sk-xxx"
+chrome_path="user-data-dir=/Users/chandraadityaputrevu/Library/Application Support/Google/Chrome"
 
 
 class Message:
@@ -22,9 +23,9 @@ class Message:
 
 
 def open_messages() -> WebDriver:
-    print("starting chrom")
+    print("starting chrome")
     options = webdriver.ChromeOptions()
-    options.add_argument("user-data-dir=/Users/chandraadityaputrevu/Library/Application Support/Google/Chrome")
+    options.add_argument(chrome_path)
     d = webdriver.Chrome(options=options)
     d.get("https://web.whatsapp.com")
     time.sleep(20)
