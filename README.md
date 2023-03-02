@@ -1,4 +1,4 @@
-# OpenAI Whatsapp Chat
+# OpenAI Abusive Whatsapp Chat
 
 This chatbot uses OpenAI's Chat API to respond to messages on WhatsApp.
 

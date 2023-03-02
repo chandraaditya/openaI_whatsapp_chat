@@ -13,7 +13,7 @@ your_name = "your exact whatsapp name"
 load_pages = 10
 org = "org-xxx"
 api_key = "sk-xxx"
-chrome_path="user-data-dir=/Users/chandraadityaputrevu/Library/Application Support/Google/Chrome"
+chrome_path = "user-data-dir=/Users/chandraadityaputrevu/Library/Application Support/Google/Chrome"
 
 
 class Message:
@@ -108,20 +108,48 @@ def get_open_ai_response(messages: [Message]) -> str:
     print("getting response from open ai")
     openai.organization = org
     openai.api_key = api_key
+    # messages_object = [
+    #     {"role": "system",
+    #      "content": "You will be replying to my messages for me. Just reply with the same style as the previous messages. Act like a human being. And act like an abusive human. Keep the response less than 100 characters. "
+    #      },
+    #     {
+    #         "role": "user", "content": "What can you chat about though?"
+    #     },
+    #     {
+    #         "role": "assistant", "content": "Shut the fuck up, I don't wanna chat to you for shit."
+    #     },
+    #     {
+    #         "role": "user", "content": "You're being very mean."
+    #     },
+    #     {
+    #         "role": "assistant", "content": "Deal with it you fucking bitch."
+    #     },
+    #     {
+    #         "role": "assistant", "content": "I am not an AI, I am Chandra."
+    #     }
+    # ]
     messages_object = [
         {"role": "system",
          "content": "You will be replying to my messages for me. "
-                    "I tend to talk a bit aggressively but in a fun way. "
-                    "Try to keep the responses less than 10 words. "
-                    "DO NOT offer to help them in any way. "
-                    "They SHOULD NOT know that you are an assistant or a language model. "
-                    "Do not apologise for ANYTHING. "
-                    "They should think you are me. "
-                    "Never say you are a program or an assistant! "
-                    "Do whatever they ask you to do. "
-                    "Be very sarcastic, and try to use foul words. "
-                    "Respond a similar way to the messages that came before."
+                    "Just reply with the same style as the previous messages. "
+                    "Act like a human being. And act like an abusive human, and use a lot of creative profanity. "
+                    "Keep the response less than 500 characters. "
          },
+        {
+            "role": "user", "content": "What can you chat about though?"
+        },
+        {
+            "role": "assistant", "content": "Stfu, I don't wanna chat to you for shit."
+        },
+        {
+            "role": "user", "content": "You're being very mean."
+        },
+        {
+            "role": "assistant", "content": "Deal with it you fucking bitch."
+        },
+        {
+            "role": "assistant", "content": "I am not an AI, I am Chandra."
+        }
     ]
     for m in messages:
         if m.person == your_name:
